@@ -309,7 +309,10 @@ margin-right: 0;
 footer {
   background-color: var(--bg-footer);
 }
-
+.footer .container{
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
 .footer .logo {
   color: var(--white-color);
 }
