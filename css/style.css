@@ -59,7 +59,7 @@ button {
   justify-content: space-between;
   border-bottom: 1px solid #ECECEC ;
 }
-.nav-logo {
+.logo {
   display: block;
   margin-right: 93px;
 
@@ -310,17 +310,10 @@ footer {
   background-color: var(--bg-footer);
 }
 
-.logo {
+.footer .logo {
   color: var(--white-color);
-  font-family: Raleway, sans-serif;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.17;
 }
 
-.logo-color {
-  color: var(--accent-color);
-}
 .address {
   margin-top: 20px;
   color: var(--white-color);
