@@ -13,9 +13,21 @@ body {
   font-family: Roboto, sans-serif;
   letter-spacing: 0, 03em;
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
 ul {
   list-style: none;
+  display: inline-block;
 }
 a {
   text-decoration: none;
@@ -24,21 +36,54 @@ a {
 button {
   font-family: inherit;
 }
-/*header*/
 
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.section{
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+
+  /*header*/
+
+ .header, .nav-links {
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ECECEC ;
+}
 .nav-logo {
+  display: block;
+  margin-right: 93px;
+
   color: var(--primary-text-color);
   font-family: Raleway, sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
+ 
 }
-
+.site-nav, .auth-nav{
+  display: flex;
+}
 .logo-color {
   color: var(--accent-color);
 }
+.item +.item{
+  margin-left: 50px;
+}
 .site-nav .link,
-.auth-nav {
+.auth-nav .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
   color: var(--primary-text-color);
   font-weight: 500;
   font-size: 14px;
@@ -50,10 +95,14 @@ button {
 .site-nav .link:focus {
   color: var(--accent-color);
 }
-.site-nav .nav-link a:active,
-.site-nav .nav-link a:visited {
+.header .site-nav .nav-link:active,
+.header .site-nav .nav-link:visited {
   color: var(--accent-color);
 }
+.auth-nav{
+  margin-left: auto;
+}
+
 .auth-nav .link {
   color: var(--secondary-color);
 }
@@ -63,18 +112,21 @@ button {
 }
 /*section hero*/
 
-.section-hero {
+.hero {
   background-color: var(--bg-hero);
   text-align: center;
+  max-width: 1600px;
+
 }
-.section-title {
+.hero-title {
   color: var(--white-color);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   letter-spacing: 0, 06em;
+  margin-bottom: 30px;
 }
-.section-hero button {
+.hero button {
   color: var(--white-color);
   background: var(--accent-color);
   font-weight: 700;
@@ -83,23 +135,36 @@ button {
   letter-spacing: 0, 06em;
   cursor: pointer;
 }
-.section-hero button:hover,
-.section-hero button:focus {
+.hero button:hover,
+.hero button:focus {
   color: var(--white-color);
   background: #188ce8;
   display: inline-block;
 }
 
 /*section benefits*/
+
+.benefits-text{
+  display: flex;
+  flex-wrap: wrap;
+}
 .benefits-title {
   display: none;
+}
+.benefits-text .item{
+  width: 270px;
+}
+.benefits-text .item + .item{
+  margin-left: 30px;
 }
 .benefits-text h3 {
   color: var(--primary-text-color);
   font-weight: 700;
   font-size: 14px;
   line-height: 1.71;
+  padding-bottom: 10px;
 }
+
 .benefits-text p {
   color: var(--secondary-color);
   font-weight: 400;
@@ -110,19 +175,42 @@ button {
 /*work*/
 .work-title,
 .our-team {
+  padding-bottom: 50px;
+
   color: var(--primary-text-color);
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
 }
+.work-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.work-list .item + .item{
+  padding-left: 30px;
+  margin: 0;
+}
 
 /*our team*/
-.group {
+.group { 
   background-color: var(--bg-group);
+}
+
+.team{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.team .item + .item{
+  margin-left: 30px;
 }
 .team li {
   background-color: var(--white-color);
+}
+.team img{
+  padding-bottom: 30px;
 }
 .team h3 {
   color: var(--primary-text-color);
@@ -130,6 +218,7 @@ button {
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
+  padding-bottom: 10px;
 }
 .team p {
   color: var(--secondary-color);
@@ -137,11 +226,13 @@ button {
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
+  padding-bottom: 30px;
 }
 
 /*our work*/
 
 .our-work .button {
+  padding: 6px 22px;
   color: var(--primary-text-color);
   background: var(--bg-group);
   cursor: pointer;
@@ -149,7 +240,9 @@ button {
   font-size: 16px;
   line-height: 1.63;
   text-align: center;
-}
+  border: transparent;
+}  
+
 .our-work .button:hover,
 .our-work .button:focus {
   color: var(--white-color);
@@ -165,7 +258,38 @@ button {
   color: var(--white-color);
   background-color: var(--accent-color);
 }
-.our-work .benefits-text h2 {
+.benefits-button{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+.benefits-button .item + .item{
+  margin-left: 8px;
+}
+.benefits-element{
+  width: calk(100% - 60px) /3);
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+.benefits-element:nth-child(3n){
+  margin-right: 0;
+}
+.benefits-element:nth-last-child(-n + 3){
+  margin-bottom: 0;
+}
+.benefits-text:nth-child(3n){
+margin-right: 0;
+}
+  .text{
+    padding: 20px 24px;
+    border-left: 1px solid#EEEEEE;
+    border-bottom: 1px solid#EEEEEE;
+    border-right: 1px solid#EEEEEE;
+
+  }
+.text .title {
+  padding-bottom: 4px;
   color: var(--primary-text-color);
   font-weight: 700;
   font-size: 18px;
@@ -185,6 +309,7 @@ button {
 footer {
   background-color: var(--bg-footer);
 }
+
 .logo {
   color: var(--white-color);
   font-family: Raleway, sans-serif;
@@ -197,6 +322,7 @@ footer {
   color: var(--accent-color);
 }
 .address {
+  margin-top: 20px;
   color: var(--white-color);
   font-style: normal;
   font-weight: 400;
@@ -204,6 +330,7 @@ footer {
   line-height: 1.71;
 }
 .address a {
+  padding-top: 9px;
   color: rgba(255, 255, 255, 0.6);
 }
 .address a:hover,
