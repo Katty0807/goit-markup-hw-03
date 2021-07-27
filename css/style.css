@@ -25,6 +25,10 @@ p {
   padding-right: 0;
   padding-left: 0;
 }
+
+img{
+  display: block;
+}
 ul {
   list-style: none;
   display: inline-block;
@@ -289,7 +293,7 @@ margin-right: 0;
 
   }
 .text .title {
-  padding-bottom: 4px;
+  margin-bottom: 4px;
   color: var(--primary-text-color);
   font-weight: 700;
   font-size: 18px;
